@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body class="bg-zinc-900">
+    <nav class="navbar h-auto bg-blue-500 text-white flex m-w-fit mx-auto z-100 text-xl md:text-3xl">
+        <div class="space1 w-full md:w-1/3">
+            <h1 class="nav-head-1 text-center md:text-left">Quiz Zone</h1>
+        </div>
+        <div class="space1 w-full md:w-2/3">
+            <ul class="flex flex-col md:flex-row items-center justify-evenly">
+                <li class="cursor-pointer py-2 md:py-0 h">Home</li>
+                <li class="cursor-pointer py-2 md:py-0 ab">About</li>
+                <li class="cursor-pointer py-2 md:py-0 acc">Account</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="welcome"><h1 class="well text-neutral-50 text-center text-3xl mt-10">welcome on our site</h1><h2 class="name text-center text-white text-2xl mt-2"></h2></div>
+    <div class="container mx-auto z-0 p-4 md:p-0 startdiv">
+        <div class="flex justify-center items-center h-screen z-0">
+            <div class="w-full md:w-1/2 bg-white p-4 rounded-lg shadow-lg">
+                <div class="in flex justify-center mb-3">
+                    <select name="" id="topic" class="text-zinc-900 w-full text-2xl">
+                        <option value="" disabled selected>select topic</option>
+                        <option value="sports" id="sports">Sports</option>
+                        <option value="daily" id="daily">Daily update</option>
+                        <option value="cricket" id="cricket">cricket</option>
+                        <option value="news" id="news">news</option>
+                        <option value="aronotic" id="aronotic">aronotic</option>
+                        <option value="travaling" id="travaling">travaling</option>
+                        <option value="lifestyle" id="lifestyle">lifestyle</option>
+                    </select>
+                </div>
+                <!-- <div class="bt mx-auto flex justify-center mb-3 ">
+                <button class="eazy bg-lime-600 rounded-lg w-15 mr-2 cursor-pointer	">Eazy</button>
+                <button class="mid bg-orange-500 rounded-lg w-17 mr-2 cursor-pointer">Middium</button>
+                <button class="hard bg-red-600 rounded-lg w-17 mr-2 cursor-pointer	">Hard</button>
+                </div> -->
+                <h1 class="text-xl md:text-2xl font-bold text-center">Quiz Application</h1>
+                <div class="mt-4">
+                    <div class="flex justify-center items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer btn">Start Quiz</button>
+                    </div>
+                    <div class="mt-4" id="quizContainer">
+                        <div class="flex justify-center items-center">
+                            <h1 class="text-lg md:text-2xl font-bold text-center">Quiz Not Started, click to start</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="Quiz.js"></script>
+</body>
+</html>
