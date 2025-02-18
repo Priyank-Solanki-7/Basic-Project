@@ -15,11 +15,14 @@ btn.addEventListener("click",()=>{
         if(topic.value=="cricket"){
             window.location="cricket.html";
         }
-        if(topic.value=="daily"){
+        if(topic.value=="news"){
+            window.location="news.html";
+        }
+        if(topic.value=="aeronautics"){
             window.location="daily.html";
         }
-        if(topic.value=="daily"){
-            window.location="daily.html";
+        if(topic.value=="traveling"){
+            window.location="traveling.html";
         }
         // window.location="Quiz.html";
     }
