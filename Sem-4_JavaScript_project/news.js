@@ -134,78 +134,85 @@ const questions = [
   const sc = document.querySelector("#score");
   
   let timer = document.querySelector(".timer");
-  let count = 60;
-  let time_f = () => {
-    if (count > 0) {
-      timer.style.color = "green";
-      count--;
-    }
-    if (count == 0) {
-      count = `<h2 color="red">time over</h2>`;
-      timer.style.color = "red";
-      ansele.forEach(b => {
-        b.disabled = true;
-      });
-    }
-    timer.innerHTML = `${count}`;
-  };
-  let current_question = 0;
-  let score = 0;
-  // Function to load questions
-  const loadQuestion = () => {
-    if (current_question < questions.length) {
-      const { question, options } = questions[current_question];
-      questionElement.innerText = question;
-      options.forEach((opt, i) => (window[`option${i + 1}`].innerText = opt));
-    } else {
-      console.warn(`Array index out of bounds`);
-    }
-  };
-  let clcount = 0;
-  // Function to check the right answer
-  submit.addEventListener("click", () => {
-    if (clcount >= 1) {
-      clcount = 0;
-    }
-    let ans_i;
-    ansele.forEach((ele, i) => {
-      if (ele.checked) {
-        ans_i = i;
-      }
+let count = 60;
+let quiz_counter=1;
+let time_f = () => {
+  if (count > 0) {
+    timer.style.color = "green";
+    count--;
+  }
+  if (count == 0) {
+    count = `<h2 color="red">time over</h2>`;
+    timer.style.color = "red";
+    ansele.forEach(b => {
+      b.disabled = true;
     });
-    if (ans_i == questions[current_question].answer) {
-      score++;
-      sc.innerText = `Score: ${score}`;
-    }
-    current_question += 1;
-    ansele.forEach(ele => (ele.checked = false));
-    loadQuestion();
-    ansele.forEach(btn => {
-      btn.disabled = false;
-    });
-    if (count < 60 || count == `<h2 color="red">time over</h2>`) {
-      count = 60;
-      timer.style.color = "green";
-      time_f();
+  }
+  timer.innerHTML = `${count}`;
+};
+let current_question = 0;
+let score = 0;
+// Function to load questions
+const loadQuestion = () => {
+  if (current_question < questions.length) {
+    const { question, options } = questions[current_question];
+    questionElement.innerText = `${quiz_counter}.. ${question}`;
+    quiz_counter++;
+    options.forEach((opt, i) => (window[`option${i + 1}`].innerText = opt));
+  } else {
+    console.warn(`Array index out of bounds`);
+  }
+};
+let clcount = 0;
+// Function to check the right answer
+submit.addEventListener("click", () => {
+  if (clcount >= 1) {
+    clcount = 0;
+  }
+  let ans_i;
+  ansele.forEach((ele, i) => {
+    if (ele.checked) {
+      ans_i = i;
     }
   });
-  
-  // Initial call to load the first question
+  if (ans_i == questions[current_question].answer) {
+    score++;
+    sc.innerText = `Score: ${score}`;
+  }
+  current_question += 1;
+  ansele.forEach(ele => (ele.checked = false));
   loadQuestion();
-  
-  previous.addEventListener("click", () => {
-    clcount = 1;
-    if (clcount <= 1) {
-      current_question -= 1;
-      if (current_question < 0) {
-        current_question = 0; // Prevent going before the first question
-      }
-      ansele.forEach(ele => (ele.checked = false));
-      ansele.forEach(btn => {
-        btn.disabled = true;
-      });
-      loadQuestion();
-    }
+  ansele.forEach(btn => {
+    btn.disabled = false;
   });
-  setInterval(time_f, 1100);
+  if (count < 60 || count == `<h2 color="red">time over</h2>`) {
+    count = 60;
+    timer.style.color = "green";
+    time_f();
+  }
+});
+
+// Initial call to load the first question
+loadQuestion();
+
+previous.addEventListener("click", () => {
+  quiz_counter--;
+  clcount = 1;
+  if (clcount <= 1) {
+    current_question -= 1;
+    if (current_question < 0) {
+      current_question = 0; // Prevent going before the first question
+    }
+    ansele.forEach(ele => (ele.checked = false));
+    ansele.forEach(btn => {
+      btn.disabled = true;
+    });
+    quiz_counter--;
+    if(quiz_counter<=1){
+      quiz_counter=1;
+    }
+    loadQuestion();
+  }
+});
+setInterval(time_f, 1100);
   

@@ -188,6 +188,7 @@ const sc = document.querySelector("#score");
 
 let timer = document.querySelector(".timer");
 let count = 60;
+let quiz_counter=1;
 let time_f = () => {
   if (count > 0) {
     timer.style.color = "green";
@@ -208,7 +209,8 @@ let score = 0;
 const loadQuestion = () => {
   if (current_question < questions.length) {
     const { question, options } = questions[current_question];
-    questionElement.innerText = question;
+    questionElement.innerText = `${quiz_counter}.. ${question}`;
+    quiz_counter++;
     options.forEach((opt, i) => (window[`option${i + 1}`].innerText = opt));
   } else {
     console.warn(`Array index out of bounds`);
@@ -247,6 +249,7 @@ submit.addEventListener("click", () => {
 loadQuestion();
 
 previous.addEventListener("click", () => {
+  quiz_counter--;
   clcount = 1;
   if (clcount <= 1) {
     current_question -= 1;
@@ -257,6 +260,10 @@ previous.addEventListener("click", () => {
     ansele.forEach(btn => {
       btn.disabled = true;
     });
+    quiz_counter--;
+    if(quiz_counter<=1){
+      quiz_counter=1;
+    }
     loadQuestion();
   }
 });
