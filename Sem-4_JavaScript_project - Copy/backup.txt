@@ -1,0 +1,20 @@
+ <!-- <div class="flex justify-center items-center min-h-screen">
+        <div class="w-full max-w-lg bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-center text-2xl font-bold mb-4">Select a Topic</h2>
+            <select id="topic" class="w-full p-3 rounded-lg text-black text-lg">
+                <option value="" disabled selected>Select a topic</option>
+                <option value="sports">Sports</option>
+                <option value="daily">Daily Updates</option>
+                <option value="cricket">Cricket</option>
+                <option value="news">News</option>
+                <option value="aeronautics">Aeronautics</option>
+                <option value="traveling">Traveling</option>
+            </select>
+            <div class="text-center mt-6">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 btn">Start Quiz</button>
+            </div>
+            <div class="mt-6 text-center" id="quizContainer">
+                <p class="text-lg text-gray-400">Quiz Not Started, click to start</p>
+            </div>
+        </div>
+    </div> -->

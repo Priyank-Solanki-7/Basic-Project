@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attempt Quiz</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-yellow-50 flex items-center justify-center min-h-screen">
+̥    <div class="container bg-white shadow-lg rounded-lg p-5">
+    <p class="text-xs info1 text-center">***Read question carefully and select right answer if you click on previous than previous question option is disabled.</p>
+    <h1 id="score" class="text-3xl text-right text-gray-500">Score:0</h1>
+    <h1 class="timer text-3xl mb-3 text-center text-lime-500 text-black"></h1>
+        <div class="mainQuiz flex justify-center items-center flex-col mt-5">
+            <h2 class="text-2xl font-extrabold mb-4 question">hear show question you select any one options click start</h2>
+            <ul class="space-y-2">
+                <li class="list-none">
+                    <label for="">A</label>
+                    <input type="radio" id="ans1" name="ans" class="answer mr-2">
+                    <label for="ans1" id="option1">Option 1</label>
+                </li>
+                <li class="list-none">
+                    <label for="">B</label>
+                    <input type="radio" id="ans2" name="ans" class="answer mr-2">
+                    <label for="ans2" id="option2">Option 2</label>
+                </li>
+                <li class="list-none">
+                    <label for="">C</label>
+                    <input type="radio" id="ans3" name="ans" class="answer mr-2">
+                    <label for="ans3" id="option3">Option 3</label>
+                </li>
+                <li class="list-none">
+                    <label for="">D</label>
+                    <input type="radio" id="ans4" name="ans" class="answer mr-2">
+                    <label for="ans4" id="option4">Option 4</label>
+                </li>
+            </ul>
+            <div class="btn-c">
+                <button class="btnDone2 bg-blue-400" id="Previous">Previous</button>
+                <button class="btnDone bg-blue-400" id="submit">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="./Quizs.js"></script>
+</body>
+
+</html>

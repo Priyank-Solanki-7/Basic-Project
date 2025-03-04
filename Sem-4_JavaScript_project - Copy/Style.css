@@ -1,0 +1,36 @@
+/* @import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+.startdiv{
+    margin-top:-3rem;
+}
+.btnDone{
+    margin-top: 2rem;
+    border: 1px solid #000;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px #000;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 1rem;
+}
+.btnDone2{
+    margin-top: 1rem;
+    border: 1px solid #000;
+    height: 2rem;
+    width: 6rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px #000;
+    cursor: pointer;
+    display: inline-block;
+}
+.card1{
+    height: auto;
+}
+.msgdiv{
+    height: 20rem;
+    margin-top: 3rem;
+    flex-direction: column;
+}

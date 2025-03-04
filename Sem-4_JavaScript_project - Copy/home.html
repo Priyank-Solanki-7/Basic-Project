@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body class="bg-zinc-900 text-white">
+    <nav class="bg-blue-600 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Quiz Zone</h1>
+            <ul class="flex space-x-6">
+                <li class="cursor-pointer hover:text-gray-300">Home</li>
+                <li class="cursor-pointer hover:text-gray-300 ab">About</li>
+                <li class="cursor-pointer hover:text-gray-300 acc">Account</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="text-center mt-10">
+        <h1 class="text-4xl font-extrabold welcome"></h1>
+        <h2 class="text-xl text-gray-300 mt-2">Test your knowledge with fun quizzes</h2>
+    </div>
+    <div class="mt-6 text-center" id="quizContainer">
+        <p class="text-lg text-gray-400">Quiz Not Started, click to start</p>
+    </div>
+    <div class="section2 mt-10">
+        <div class="container mx-auto w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="sports" selected disabled>Sports</option>
+                </select>
+                <h1 class="text-black text-4xl">Sports</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/sports icon.png" alt="Sports Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+    
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="daily" selected disabled>Daily</option>
+                </select>
+                <h1 class="text-black text-4xl">Daily Update</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/daily.jpeg" alt="Daily Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+    
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="cricket" selected disabled>History</option>
+                </select>
+                <h1 class="text-black text-4xl">Cricket</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/cricket.jpeg" alt="History Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+    <div class="section2 mt-10">
+        <div class="container mx-auto w-fit grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="news" selected disabled>Sports</option>
+                </select>
+                <h1 class="text-black text-4xl">News</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/news.png" alt="Sports Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+    
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="aeronautics" selected disabled>Daily</option>
+                </select>
+                <h1 class="text-black text-4xl">&nbsp;Aeronautics&nbsp;</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/plain.png" alt="Daily Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+    
+            <div class="card bg-blue-300 rounded-lg p-6 text-center">
+                <select class="hidden" id="topic">
+                    <option value="Traveling" selected disabled>History</option>
+                </select>
+                <h1 class="text-black text-4xl">Traveling</h1>
+                <div class="mx-auto mt-4 w-fit">
+                    <img src="./images/travel.png" alt="History Icon" class="mix-blend-multiply w-24 h-24">
+                </div>
+                <button class="btn bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 mt-6">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="Quiz.js"></script>
+</body>
+</html>
