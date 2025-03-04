@@ -29,3 +29,8 @@
 .card1{
     height: auto;
 }
+.msgdiv{
+    height: 20rem;
+    margin-top: 3rem;
+    flex-direction: column;
+}

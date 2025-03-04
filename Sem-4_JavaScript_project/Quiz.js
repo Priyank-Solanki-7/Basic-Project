@@ -1,4 +1,7 @@
 `use strict`;
+let uname=localStorage.getItem("uname");
+let wel=document.querySelector(".welcome")
+wel.innerHTML=`<h1>Welcome to Quiz Zone ${uname}</h1>`
 // let text1 = document.querySelector(".name");
 document.querySelectorAll(".btn").forEach((btn,i)=>{
   btn.addEventListener("click", () => {
@@ -21,4 +24,4 @@ acc = document.querySelector(".acc");
 acc.addEventListener("click", () => {
   window.location = "./index.html";
 });
-localStorage.clear();
+localStorage.removeItem("item");
