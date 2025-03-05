@@ -95,7 +95,16 @@ const questions = [
       "answer": 0
     }
   ]
-  
+ 
+  const arrayShuffle=(array)=>{
+    for(let i=array.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [array[i],array[j]]=[array[j],array[i]];
+    }
+    return array;
+  }
+
+  let shuflequstion=arrayShuffle(questions);
   
   // Initialize variables
   const ansele = document.querySelectorAll(".answer");
@@ -130,7 +139,7 @@ let score = 0;
 // Function to load questions
 const loadQuestion = () => {
   if (current_question < questions.length) {
-    const { question, options } = questions[current_question];
+    const { question, options } = shuflequstion[current_question];
     questionElement.innerText = `${quiz_counter}.. ${question}`;
     quiz_counter++;
     options.forEach((opt, i) => (window[`option${i + 1}`].innerText = opt));
@@ -150,11 +159,14 @@ submit.addEventListener("click", () => {
       ans_i = i;
     }
   });
-  if (ans_i == questions[current_question].answer) {
+  if (ans_i == shuflequstion[current_question].answer) {
     score++;
     sc.innerText = `Score: ${score}`;
   }
   current_question += 1;
+  if(current_question===shuflequstion[last-1]){
+    window.location="./result.html";
+  }
   ansele.forEach(ele => (ele.checked = false));
   loadQuestion();
   ansele.forEach(btn => {
@@ -190,4 +202,4 @@ previous.addEventListener("click", () => {
   }
 });
 setInterval(time_f, 1100);
-  
+let last = shuflequstion.length - 1
