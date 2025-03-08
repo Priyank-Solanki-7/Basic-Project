@@ -225,6 +225,11 @@ let current_question = 0;
 let score = 0;
 // Function to load questions
 const loadQuestion = () => {
+if (current_question >= shuflequstion.length) {
+  // Redirect to the result page if the quiz is already completed
+  window.location.href = `result.html?score=${score}`;
+  return;
+}
 if (current_question < questions.length) {
   const { question, options } = shuflequstion[current_question];
   questionElement.innerText = `${quiz_counter}.. ${question}`;
@@ -248,9 +253,15 @@ ansele.forEach((ele, i) => {
 });
 if (ans_i == shuflequstion[current_question].answer) {
   score++;
+  localStorage.setItem("score",score);
   sc.innerText = `Score: ${score}`;
 }
 current_question += 1;
+if (current_question >= shuflequstion.length) {
+  // Redirect to the result page
+  window.location.href = `result.html?score=${score}`; // Pass the score as a query parameter
+  return; // Stop further execution
+}
 ansele.forEach(ele => (ele.checked = false));
 loadQuestion();
 ansele.forEach(btn => {
@@ -285,4 +296,7 @@ if (clcount <= 1) {
   loadQuestion();
 }
 });
+
+
 setInterval(time_f, 1100);
+let last = shuflequstion.length - 1
