@@ -1,150 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    let login_btn = document.querySelector("#login_btn");
+    let username = document.querySelector("#username");
+    let password = document.querySelector("#password");
+    let email = document.querySelector("#email");
+    let msg1 = document.querySelector("#msg1");
+    let msg2 = document.querySelector("#msg2");
+    let msg3 = document.querySelector(".errmaster");
+    let msg4 = document.querySelector("#msg4");
+    let err = 0;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
-</head>
-
-<body class="flex items-center justify-center h-screen bg-gray-200">
-    <div class="w-full max-w-sm">
-        <h1 class="text-center text-3xl mb-4">Register Form</h1>
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                    Username
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="username" type="text" placeholder="Username" required />
-                <p id="msg1" class="text-red-700"></p>
-            </div>
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                    Password
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="password" type="password" placeholder="Password" required />
-                <p id="msg2" class="text-red-700"></p>
-            </div>
-            <div class="mb-8">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                    Email address
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email" type="email" placeholder="Email" required />
-                <p id="msg4" class="text-red-700"></p>
-            </div>
-            <div class="flex items-center justify-between">
-                <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="button" id="login_btn">
-                    Sign In
-                </button>
-                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                    href="./index.html">
-                    Login page
-                </a>
-            </div>
-            <h2 class="text-center text-2xl text-red-500 errmaster mt-3"></h2>
-        </form>
-    </div>
-    <script>
-        let login_btn = document.querySelector("#login_btn")
-        let username = document.querySelector("#username");
-        let password = document.querySelector("#password");
-        let email = document.querySelector("#email");
-        let msg1 = document.querySelector("#msg1");
-        let msg2 = document.querySelector("#msg2");
-        let msg3 = document.querySelector(".errmaster");
-        let msg4 = document.querySelector("#msg4");
-        let err = 0;
-        login_btn.addEventListener("click", () => {
-            if (username.value == "") {
-                msg1.innerHTML = `Plese enter username null value not allow`
-                username.focus();
-                setInterval(() => {
-                    msg1.innerHTML = "";
-                }, 2200)
+    login_btn.addEventListener("click", async () => {
+        // Validate inputs
+        if (username.value === "") {
+            msg1.innerHTML = `Please enter username, null value not allowed`;
+            setInterval(() => { msg1.innerHTML = ""; }, 2200);
+            err = 1;
+        } else {
+            let username_v = /^[a-zA-Z0-9]{3,}$/;
+            if (username_v.test(username.value)) {
+                msg1.style.color = "green";
+                msg1.innerHTML = "done";
+                err = 0;
+            } else {
+                msg1.style.color = "red";
+                msg1.innerHTML = "Invalid username";
+                setInterval(() => { msg1.innerHTML = ""; }, 2200);
                 err = 1;
             }
-            else {
-                let username_v = /^[a-zA-Z0-9]{3,}$/;
-                if (username_v.test(username.value)) {
-                    msg1.style.color = "green";
-                    msg1.innerHTML = "done";
-                    err = 0;
-                } else {
-                    msg1.style.color = "red";
-                    msg1.innerHTML = "Invalid username";
-                    setInterval(() => {
-                        msg1.innerHTML = "";
-                    }, 2200)
-                    err = 1;
-                }
+        }
 
-            }
-            if (password.value == "") {
-                msg2.innerHTML = `Plese enter username null value not allow`
-                username.focus();
-                setInterval(() => {
-                    msg2.innerHTML = "";
-                }, 2200)
+        if (password.value === "") {
+            msg2.innerHTML = `Please enter password, null value not allowed`;
+            setInterval(() => { msg2.innerHTML = ""; }, 2200);
+            err = 1;
+        } else {
+            let password_v = /^[a-zA-Z0-9]{3,}$/;
+            if (password_v.test(password.value)) {
+                msg2.style.color = "green";
+                msg2.innerHTML = "done";
+                err = 0;
+            } else {
+                msg2.style.color = "red";
+                msg2.innerHTML = "Invalid password";
+                setInterval(() => { msg2.innerHTML = ""; }, 2200);
                 err = 1;
             }
-            else {
-                let password_v = /^[a-zA-Z0-9]{3,}$/;
-                if (password_v.test(username.value)) {
-                    msg2.style.color = "green";
-                    msg2.innerHTML = "done";
-                    err = 0;
-                } else {
-                    msg2.style.color = "red";
-                    msg2.innerHTML = "Invalid username";
-                    setInterval(() => {
-                        msg2.innerHTML = "";
-                    }, 2200)
-                    err = 1;
-                }
+        }
+
+        if (email.value === "") {
+            msg4.innerHTML = `Please enter email, null value not allowed`;
+            setInterval(() => { msg4.innerHTML = ""; }, 2200);
+            err = 1;
+        } else {
+            let email_v = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email_v.test(email.value)) {
+                msg4.style.color = "green";
+                msg4.innerHTML = "done";
+                err = 0;
+            } else {
+                msg4.style.color = "red";
+                msg4.innerHTML = "Invalid email";
+                setInterval(() => { msg4.innerHTML = ""; }, 2200);
+                err = 1;
             }
-                if (email.value == "") {
-                    msg4.innerHTML = `Please enter email, null value not allowed`;
-                    setInterval(() => {
-                        msg4.innerHTML = "";
-                    }, 2200);
-                    err = 1;
+        }
+
+        if (err === 1) {
+            msg3.innerHTML = `Error occurred`;
+            setInterval(() => { msg3.innerHTML = ""; }, 2200);
+        } else {
+            // Send data to backend
+            try {
+                const response = await fetch('http://localhost:5000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username.value,
+                        email: email.value,
+                        password: password.value,
+                    }),
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert(data.message);
+                    window.location.href = "./index.html"; // Redirect to login page
                 } else {
-                    let email_v = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                    if (email_v.test(email.value)) {
-                        msg4.style.color = "green";
-                        msg4.innerHTML = "done";
-                        err = 0;
-                    } else {
-                        msg4.style.color = "red";
-                        msg4.innerHTML = "Invalid email";
-                        setInterval(() => {
-                            msg4.innerHTML = "";
-                        }, 2200);
-                        err = 1;
-                    }
+                    msg3.innerHTML = data.message;
+                    setInterval(() => { msg3.innerHTML = ""; }, 2200);
                 }
-
-                if (err == 1) {
-                    msg3.innerHTML = `errer occer`
-                    setInterval(() => {
-                        msg3.innerHTML = "";
-                    }, 2200)
-                }
-                else {
-                    window.location = "./home.html"
-                }
-                localStorage.setItem("uname", username.value)
-        });
-    </script>
-</body>
-
-</html>
+            } catch (error) {
+                console.error('Error:', error);
+                msg3.innerHTML = 'Error during registration';
+                setInterval(() => { msg3.innerHTML = ""; }, 2200);
+            }
+        }
+    });
+</script>
