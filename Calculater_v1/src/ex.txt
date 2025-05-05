@@ -1,0 +1,28 @@
+/* <button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 rounded-lg mt-2`}>7</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 rounded-lg`}>8</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 rounded-lg`}>9</button>
+</div>
+<div className={`w-full row`}>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 mt-1 rounded-lg`}>6</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>5</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>4</button>
+</div>
+<div className={`w-full row`}>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 mt-1 rounded-lg`}>3</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>2</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>1</button>
+</div>
+<div className={`w-full row`}>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 mt-1 rounded-lg`}>C</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>.</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>0</button>
+</div>
+<div className={`w-full row`}>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 mt-1 rounded-lg`}>+</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>-</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>*</button>
+</div>
+<div className={`w-full row`}>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-2 mt-1 rounded-lg`}>/</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>^</button>
+<button className={`w-1/4 bg-blue-400 text-white h-10 mx-1.5 mt-1 rounded-lg`}>%</button> */
